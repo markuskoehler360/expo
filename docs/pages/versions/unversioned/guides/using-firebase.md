@@ -24,11 +24,11 @@ See the [official Firebase blog post announcing React Native compatibility](http
 
 ## Firebase SDK Setup
 
-First we need to setup a Firebase Account and create a new project. We will be using the JavaScript SDK provided by Firebase, so pull it into your Expo project.
+First we need to setup a Firebase Account and create a new project. We will be using the JavaScript SDK provided by Firebase, so install it into your project as well as the required polyfill.
 
-`yarn add firebase@7.9.0`
+`expo install firebase expo-firebase-polyfill`
 
-> The latest Firebase JS SDK contains a regression and currently doesn't work on react-native. [Read more about that here](https://github.com/expo/expo/issues/7507#issuecomment-608299120).
+> **`expo-firebase-polyfill`**  polyfills several APIs ensuring that the Firebase JS SDK works on react-native.
 
 The Firebase console will provide you with an api key, and other identifiers for your project needed for initialization. [firebase-web-start](https://firebase.google.com/docs/database/web/start) has a detailed description of what each field means and where to find them in your console.
 
