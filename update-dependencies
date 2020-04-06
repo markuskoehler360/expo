@@ -15,15 +15,10 @@ echo "$newCommit" > ./nix/nixpkgs.json
 
 # generate binstubs for cli tools
 bin/nix-binstubs \
-  awscli \
   cocoapods \
-  fastlane \
-  git-crypt \
-  git-lfs \
   jq \
   nodePackages.gulp-cli \
   nodejs \
-  xcpretty \
   yarn
 
 # get newer npm

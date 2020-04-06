@@ -13,6 +13,8 @@ require git-lfs
 # We can install yarn because `npm install` is cross-platform
 require yarn || npm install -g yarn
 
+require direnv
+
 # Set up submodules
 git submodule update --init
 git submodule foreach --recursive git checkout .
