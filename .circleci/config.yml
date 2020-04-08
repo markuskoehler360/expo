@@ -17,7 +17,7 @@ commands:
          fi
       - run: mkdir -p ~/.config/direnv
       - run: echo -e "[whitelist]\nprefix = [ \"$HOME\" ]" > ~/.config/direnv/config.toml
-      - run: echo 'eval "$(direnv export bash)"' >> ~/.bashrc
+      - run: echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
       - run: echo 'source ~/.bashrc' >> ~/.bash_profile
   install_yarn:
     steps:
