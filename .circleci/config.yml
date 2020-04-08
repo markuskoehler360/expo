@@ -598,7 +598,6 @@ jobs:
       - install_nix
       - nix_install_common_packages
       - setup
-      - run: echo "chruby 2.6.3" >> ~/.bash_profile
       - bundle_install
       - guard_sdk_tests
       - update_submodules
@@ -664,7 +663,6 @@ jobs:
       - run:
           name: Generate dynamic macros
           command: expotools ios-generate-dynamic-macros
-      - run: echo "chruby 2.6.3" >> ~/.bash_profile
       - bundle_install
       - run:
           name: Build
@@ -707,7 +705,6 @@ jobs:
       - update_submodules
       - git_lfs_pull
       - fetch_cocoapods_specs
-      - run: echo "chruby 2.6.3" >> ~/.bash_profile
       - bundle_install
       - run:
           name: Generate dynamic macros
