@@ -17,8 +17,7 @@ commands:
          fi
       - run: mkdir -p ~/.config/direnv
       - run: echo -e "[whitelist]\nprefix = [ \"$HOME\" ]" > ~/.config/direnv/config.toml
-      - run: echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
-      - run: echo 'source ~/.bashrc' >> ~/.bash_profile
+      - run: echo 'eval "$(direnv hook bash)"' >> $BASH_ENV
   install_yarn:
     steps:
       - run: curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
