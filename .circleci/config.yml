@@ -350,7 +350,7 @@ executors:
     docker:
       - image: lnl7/nix:2.1.2
     # Symlink to the readline-enabled bash which is the default command of the container
-    shell: /run/current-system/sw/bin/bash -leo pipefail
+    shell: /run/current-system/sw/bin/bash -eo pipefail
     working_directory: /root/expo
     environment:
       # fastlane complains if these are not set
@@ -368,7 +368,7 @@ executors:
   web:
     docker:
       - image: circleci/node:latest-browsers
-    shell: /bin/bash -leo pipefail
+    shell: /bin/bash -eo pipefail
     working_directory: /home/circleci/expo
     resource_class: small
     environment:
@@ -377,7 +377,6 @@ executors:
     macos: # https://circleci.com/docs/2.0/testing-ios/#supported-xcode-versions
       xcode: '11.4.0'
     working_directory: /Users/distiller/project
-    shell: /bin/bash -leo pipefail
     environment:
       # Homebrew settings
       HOMEBREW_NO_INSTALL_CLEANUP: 1
