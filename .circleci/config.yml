@@ -376,6 +376,7 @@ executors:
   mac:
     macos: # https://circleci.com/docs/2.0/testing-ios/#supported-xcode-versions
       xcode: '11.4.0'
+    shell: /bin/bash -leo pipefail
     working_directory: /Users/distiller/project
     environment:
       BASH_ENV: /Users/distiller/.bash_profile
