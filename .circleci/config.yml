@@ -14,8 +14,9 @@ commands:
          if nix --version; then
            nix-env -f nix -iA direnv
          else
-           curl -sfL https://direnv.net/install.sh | bin_path=/usr/local/bin bash
+           curl -sfL https://direnv.net/install.sh | bin_path=~/.local/bin bash
          fi
+      - run: echo 'PATH=$PATH:~/.local/bin' >> $BASH_ENV
       - run: echo 'eval "$(direnv hook bash)"' >> $BASH_ENV
   install_yarn:
     steps:
