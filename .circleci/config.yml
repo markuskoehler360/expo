@@ -9,14 +9,14 @@ commands:
   setup_direnv:
     steps:
       - run: mkdir -p ~/.config/direnv
+      - run: echo -e "[whitelist]\nprefix = [ \"$HOME\" ]" > ~/.config/direnv/config.toml
       - run: |
          if nix --version; then
            nix-env -f nix -iA direnv
          else
-           sudo apt-get install direnv
+           curl -sfL https://direnv.net/install.sh | bin_path=/usr/local/bin bash
          fi
       - run: echo 'eval "$(direnv hook bash)"' >> $BASH_ENV
-      - run: echo 'direnv allow' >> $BASH_ENV
   install_yarn:
     steps:
       - run: curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
