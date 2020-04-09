@@ -15,7 +15,7 @@ commands:
          else
            sudo apt-get install direnv
          fi
-      - run: echo 'eval "$(direnv export bash)"' >> $BASH_ENV
+      - run: echo 'eval "$(direnv hook bash)"' >> $BASH_ENV
       - run: echo 'direnv allow' >> $BASH_ENV
   install_yarn:
     steps:
