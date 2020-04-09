@@ -379,7 +379,7 @@ executors:
     shell: /bin/bash -leo pipefail
     working_directory: /Users/distiller/project
     environment:
-      BASH_ENV: /Users/distiller/.bash_profile
+      BASH_ENV: /Users/distiller/.bashrc
       # Homebrew settings
       HOMEBREW_NO_INSTALL_CLEANUP: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
