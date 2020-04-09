@@ -352,7 +352,7 @@ executors:
     docker:
       - image: lnl7/nix:2.1.2
     # Symlink to the readline-enabled bash which is the default command of the container
-    shell: /run/current-system/sw/bin/bash -eo pipefail
+    shell: /run/current-system/sw/bin/bash -leo pipefail
     working_directory: /root/expo
     environment:
       # fastlane complains if these are not set
@@ -370,7 +370,7 @@ executors:
   web:
     docker:
       - image: circleci/node:latest-browsers
-    shell: /bin/bash -eo pipefail
+    shell: /bin/bash -leo pipefail
     working_directory: /home/circleci/expo
     resource_class: small
     environment:
