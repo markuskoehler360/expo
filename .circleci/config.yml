@@ -220,7 +220,8 @@ commands:
               nixpkgs.openssh \
               nixpkgs.rsync \
               nixpkgs.xz \
-              nixpkgs.nodejs nixpkgs.yarn
+              nixpkgs.nodejs-10_x \
+              nixpkgs.nodepackages_10_x.yarn
   setup:
     parameters:
       load_status:
