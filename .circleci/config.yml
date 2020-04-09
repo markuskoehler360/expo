@@ -17,7 +17,7 @@ commands:
            # TODO: Install a stable version on non-nix systems
            curl -sfL https://direnv.net/install.sh | bash
          fi
-      - run: echo 'eval "$(direnv hook bash)"' >> $BASH_ENV
+      - run: echo 'eval "$(direnv export bash)"' >> $BASH_ENV
   install_yarn:
     steps:
       - run: curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
