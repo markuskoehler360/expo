@@ -13,12 +13,11 @@ commands:
       - run: |
          if nix --version; then
            nix-env -f nix -iA direnv
-           echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
          else
            # TODO: Install a stable version on non-nix systems
            curl -sfL https://direnv.net/install.sh | bash
-           echo 'eval "$(direnv hook bash)"' >> $BASH_ENV
          fi
+      - run: echo 'eval "$(direnv hook bash)"' >> $BASH_ENV
   install_yarn:
     steps:
       - run: curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
