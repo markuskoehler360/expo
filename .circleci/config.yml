@@ -194,7 +194,6 @@ commands:
   install_nix:
     steps:
       - run: curl https://nixos.org/releases/nix/nix-2.1.2/install | bash -s -- --no-daemon
-      - run: echo ". ~/.nix-profile/etc/profile.d/nix.sh" >> $BASH_ENV
   nix_install_common_packages:
     steps:
       - run:
@@ -383,6 +382,7 @@ executors:
       xcode: '11.4.0'
     working_directory: /Users/distiller/project
     environment:
+      BASH_ENV: /Users/distiller/.bash_profile
       # Homebrew settings
       HOMEBREW_NO_INSTALL_CLEANUP: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
