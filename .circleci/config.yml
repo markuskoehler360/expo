@@ -355,6 +355,7 @@ executors:
     shell: /run/current-system/sw/bin/bash -leo pipefail
     working_directory: /root/expo
     environment:
+      BASH_ENV: /root/expo/.bash_profile
       # fastlane complains if these are not set
       LANG: en_US.UTF-8
       FASTLANE_SKIP_UPDATE_CHECK: 1
