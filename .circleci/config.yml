@@ -230,6 +230,8 @@ commands:
       - shallow-checkout/checkout
       - setup_direnv
       - run: nix-env -f nix -iA nodejs yarn
+      - run: echo 'export TEST=true' >> "$BASH_ENV"
+      - run: echo $TEST
       - when:
           condition: << parameters.load_status >>
           steps:
@@ -378,7 +380,6 @@ executors:
       xcode: '11.4.0'
     working_directory: /Users/distiller/project
     environment:
-      BASH_ENV: /Users/distiller/.bashrc
       # Homebrew settings
       HOMEBREW_NO_INSTALL_CLEANUP: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
