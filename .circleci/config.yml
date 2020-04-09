@@ -219,7 +219,8 @@ commands:
               nixpkgs.jq \
               nixpkgs.openssh \
               nixpkgs.rsync \
-              nixpkgs.xz
+              nixpkgs.xz \
+              nixpkgs.nodejs nixpkgs.yarn
   setup:
     parameters:
       load_status:

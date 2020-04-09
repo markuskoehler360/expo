@@ -17,9 +17,7 @@ echo "$newCommit" > ./nix/nixpkgs.json
 bin/nix-binstubs \
   cocoapods \
   jq \
-  nodePackages.gulp-cli \
-  nodejs \
-  yarn
+  nodePackages.gulp-cli
 
 # get newer npm
 rm bin/np*
