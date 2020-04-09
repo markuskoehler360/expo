@@ -219,9 +219,7 @@ commands:
               nixpkgs.jq \
               nixpkgs.openssh \
               nixpkgs.rsync \
-              nixpkgs.xz \
-              nixpkgs.nodejs-10_x \
-              nixpkgs.nodePackages_10_x.yarn
+              nixpkgs.xz
   setup:
     parameters:
       load_status:
@@ -231,6 +229,7 @@ commands:
       - run: echo '--frozen-lockfile true' >> ~/.yarnrc
       - shallow-checkout/checkout
       - setup_direnv
+      - run: nix-env -f nix -iA nodejs yarn
       - when:
           condition: << parameters.load_status >>
           steps:
@@ -784,8 +783,8 @@ jobs:
   shell_app_android_build:
     executor: android
     steps:
-      - setup:
-          load_status: false
+      - checkout
+      - setup_direnv
       - run: echo '--frozen-lockfile true' >> ~/.yarnrc
       - run: echo 'export S3_URI=s3://exp-artifacts/android-shell-builder-$CIRCLE_SHA1.tar.gz' >> $BASH_ENV
       - decrypt_secrets_if_possible
@@ -886,8 +885,8 @@ jobs:
   client_android_release_google_play:
     executor: android
     steps:
-      - setup:
-          load_status: false
+      - checkout
+      - setup_direnv
       - restore_cache:
           key: client-android-apk-{{ .Revision }}
       - install_ruby:
