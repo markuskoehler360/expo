@@ -228,7 +228,7 @@ commands:
         default: true
     steps:
       - run: echo '--frozen-lockfile true' >> ~/.yarnrc
-      - shallow-checkout/checkout
+      - checkout
       - setup_direnv
       - run: echo 'export TEST=true' >> "$BASH_ENV"
       - run: echo $TEST
