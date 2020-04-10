@@ -535,11 +535,11 @@ jobs:
       - update_submodules
       - restore_yarn_cache
       - yarn_install:
-          working_directory: ~/project
+          working_directory: ~/expo
       - save_yarn_cache
       - yarn:
           command: test:web
-          working_directory: ~/project/apps/bare-expo
+          working_directory: ~/expo/apps/bare-expo
       - job-status-change/status
       - slack-job-status-notification/notify:
           only_for_branches: master sdk-*
