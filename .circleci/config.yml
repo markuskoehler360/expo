@@ -522,6 +522,7 @@ jobs:
   expo_sdk:
     executor: js
     steps:
+      - run: whoami
       - nix_install_common_packages
       - setup
       - conditionally_halt:
