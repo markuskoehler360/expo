@@ -230,7 +230,6 @@ commands:
       - run: echo '--frozen-lockfile true' >> ~/.yarnrc
       - shallow-checkout/checkout
       - setup_direnv
-      - run: nix-env -f nix -iA nodejs yarn
       - run: echo 'export TEST=true' >> "$BASH_ENV"
       - run: echo $TEST
       - when:
