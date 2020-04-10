@@ -516,7 +516,7 @@ jobs:
       - update_submodules
       - restore_yarn_cache
       - yarn_install:
-          working_directory: ~/expo
+          working_directory: ~/project
       - save_yarn_cache
       - run:
           name: Check packages
@@ -535,11 +535,11 @@ jobs:
       - update_submodules
       - restore_yarn_cache
       - yarn_install:
-          working_directory: ~/expo
+          working_directory: ~/project
       - save_yarn_cache
       - yarn:
           command: test:web
-          working_directory: ~/expo/apps/bare-expo
+          working_directory: ~/project/apps/bare-expo
       - job-status-change/status
       - slack-job-status-notification/notify:
           only_for_branches: master sdk-*
@@ -552,14 +552,14 @@ jobs:
       - update_submodules
       - restore_yarn_cache
       - yarn_install:
-          working_directory: ~/expo
+          working_directory: ~/project
       - save_yarn_cache
       - yarn:
           command: jest --maxWorkers 1
-          working_directory: ~/expo/home
+          working_directory: ~/project/home
       - yarn:
           command: lint
-          working_directory: ~/expo/home
+          working_directory: ~/project/home
       - job-status-change/status
       - slack-job-status-notification/notify:
           only_for_branches: master sdk-*
@@ -570,10 +570,10 @@ jobs:
     steps:
       - setup
       - yarn_restore_and_install:
-          working_directory: ~/expo/tools/expotools
+          working_directory: ~/project/tools/expotools
       - yarn:
           command: tsc
-          working_directory: ~/expo/tools/expotools
+          working_directory: ~/project/tools/expotools
 
   ios_test_suite:
     executor: mac
