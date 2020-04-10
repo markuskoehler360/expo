@@ -367,7 +367,8 @@ executors:
       - image: circleci/android:api-28-ndk-r17b
     resource_class: xlarge
   js:
-    <<: *nix
+    docker:
+    - image: circleci/node:lts-buster
     resource_class: small
   web:
     docker:
@@ -522,8 +523,6 @@ jobs:
   expo_sdk:
     executor: js
     steps:
-      - run: whoami
-      - nix_install_common_packages
       - setup
       - conditionally_halt:
           # Exclude (include anything except) .git/, node_modules,THIRD-PARTY-LICENSES, LICENSE, docs/, guides/, template-files/, templates/, and every `.md` file
@@ -564,7 +563,6 @@ jobs:
   home:
     executor: js
     steps:
-      - nix_install_common_packages
       - setup
       - guard_sdk_tests
       - update_submodules
@@ -586,7 +584,6 @@ jobs:
   expotools:
     executor: js
     steps:
-      - nix_install_common_packages
       - setup
       - guard_sdk_tests
       - yarn_restore_and_install:
@@ -877,7 +874,6 @@ jobs:
   client_android_apk_release:
     executor: js
     steps:
-      - nix_install_common_packages
       - setup
       - update_submodules
       - decrypt_secrets_if_possible
