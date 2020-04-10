@@ -535,7 +535,6 @@ jobs:
       - install_nix
       - nix_install_common_packages
       - setup
-      - guard_sdk_tests
       - update_submodules
       - restore_yarn_cache
       - yarn_install:
@@ -553,7 +552,6 @@ jobs:
     executor: js
     steps:
       - setup
-      - guard_sdk_tests
       - update_submodules
       - restore_yarn_cache
       - yarn_install:
@@ -574,7 +572,6 @@ jobs:
     executor: js
     steps:
       - setup
-      - guard_sdk_tests
       - yarn_restore_and_install:
           working_directory: ~/expo/tools/expotools
       - yarn:
@@ -590,7 +587,6 @@ jobs:
       - nix_install_common_packages
       - setup
       - bundle_install
-      - guard_sdk_tests
       - update_submodules
 
       # Simulators are more likely to fail. Try them first
@@ -647,7 +643,6 @@ jobs:
       - install_nix
       - nix_install_common_packages
       - setup
-      - guard_sdk_tests
       - update_submodules
       - git_lfs_pull
       - decrypt_secrets_if_possible
@@ -692,7 +687,6 @@ jobs:
       - install_nix
       - nix_install_common_packages
       - setup
-      - guard_sdk_tests
       - update_submodules
       - git_lfs_pull
       - fetch_cocoapods_specs
@@ -729,7 +723,6 @@ jobs:
       - install_nix
       - nix_install_common_packages
       - setup
-      - guard_sdk_tests
       - update_submodules
       - git_lfs_pull
       - fetch_cocoapods_specs
