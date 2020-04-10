@@ -14,6 +14,8 @@ npm i -g react-native-cli
 expo init --template bare-minimum
 ```
 
+To enter the bare workflow you have to eject your project using `expo eject`. 
+
 Next, let's get the project running. Go into your project directory and run `react-native run-ios` or `react-native run-android` &mdash; hurray! Your project is working.
 
 ## Using react-native-unimodules
